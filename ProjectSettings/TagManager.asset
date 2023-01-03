@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Saw
+  - Character
+  - Bladetrail
+  - P1UI
+  - P2UI
+  - SeekerUI
+  - HiderUI
+  - Platform
+  - GhostCollider
+  - SawArms
+  - RevealerSprite
+  - White
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Saw
+  - Bladetrail
+  - Platform
+  - SeekerCollider
+  - SawArms
+  - Character
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: background
+    uniqueID: 2910725759
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: character
+    uniqueID: 4206644129
+    locked: 0
+  - name: blackout
+    uniqueID: 3939914501
+    locked: 0
+  - name: UI
+    uniqueID: 1696825507
+    locked: 0
