@@ -1,0 +1,64 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Ability : MonoBehaviour
+{
+    protected bool active; // only used with dash ...
+    protected float activeTimer; // (SET FOR EACH) how long ability is active. only used with dash ...
+    protected float coolDown; // (SET FOR EACH) wait time between activations
+    protected float lastUseTimeStamp; // used to compare with cooldown to see if ability can be used
+
+    public virtual void Activate()
+    {
+    }
+
+    public virtual void Deactivate()
+    {
+    }
+
+    // D E R I V E D  A B I L I I T Y  B O I L E R  P L A T E
+    //
+    //// Start is called before the first frame update
+    //void Start()
+    //{
+    //    active = false;
+    //    activeTimer = 0.2f;
+    //    coolDown = 0.7f;
+    //    lastUseTimeStamp = 0f;
+    //}
+    //
+    //// Update is called once per frame
+    //void Update()
+    //{
+    //    if (active)
+    //    {
+    //        activeTimer -= Time.deltaTime;
+    //        if (activeTimer <= 0)
+    //        {
+    //            Deactivate();
+    //        }
+    //    }
+    //}
+    //
+    //public override void Activate()
+    //{
+    //    if (Time.time - lastUseTimeStamp > coolDown)
+    //    {
+    //        // ability timer stuff
+    //        active = true;
+    //        activeTimer = 0.2f;
+    //        lastUseTimeStamp = Time.time;
+    //
+    //        // ability effects
+    //    }
+    //}
+    //
+    //public override void Deactivate()
+    //{
+    //    // ability timer stuff
+    //    active = false;
+    //
+    //    // ability effects
+    //}
+}
