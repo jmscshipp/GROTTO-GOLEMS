@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         inputVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        GetComponent<Rigidbody2D>().AddForce(inputVector * Time.deltaTime * speed * 300);
+        GetComponent<Rigidbody2D>().AddForce(inputVector * Time.deltaTime * speed * 300.0f);
     }
 
     //public void OnMove(InputAction.CallbackContext context)

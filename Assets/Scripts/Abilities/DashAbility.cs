@@ -15,7 +15,8 @@ public class DashAbility : Ability
     {
         // general timer set up
         active = false;
-        activeTimer = 0.2f;
+        activeTime = 0.2f;
+        timeSinceActivation = activeTime;
         coolDown = 0.7f;
         lastUseTimeStamp = 0f;
 
@@ -28,8 +29,8 @@ public class DashAbility : Ability
     {
         if (active)
         {
-            activeTimer -= Time.deltaTime;
-            if (activeTimer <= 0)
+            timeSinceActivation -= Time.deltaTime;
+            if (timeSinceActivation <= 0)
             {
                 Deactivate();
             }
@@ -42,12 +43,12 @@ public class DashAbility : Ability
         {
             // ability timer stuff
             active = true;
-            activeTimer = 0.2f;
+            timeSinceActivation = activeTime;
             lastUseTimeStamp = Time.time;
 
             // ability effects
             playerMovement.speed *= speedIncreaseMultiplier;
-            StartCoroutine(SpeedEffect(activeTimer));
+            StartCoroutine(SpeedEffect(timeSinceActivation));
         }
     }
 
@@ -60,6 +61,7 @@ public class DashAbility : Ability
         playerMovement.speed /= speedIncreaseMultiplier;
     }
 
+    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     // this effect would look better if the afterimages faded out!
     // come back and do that
 

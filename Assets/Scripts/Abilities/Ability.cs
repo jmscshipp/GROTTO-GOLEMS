@@ -5,7 +5,8 @@ using UnityEngine;
 public class Ability : MonoBehaviour
 {
     protected bool active; // only used with dash ...
-    protected float activeTimer; // (SET FOR EACH) how long ability is active. only used with dash ...
+    protected float activeTime; // (SET FOR EACH) how long ability is active. only used with dash ...
+    protected float timeSinceActivation; // keeps track from moment to moment
     protected float coolDown; // (SET FOR EACH) wait time between activations
     protected float lastUseTimeStamp; // used to compare with cooldown to see if ability can be used
 
@@ -19,13 +20,16 @@ public class Ability : MonoBehaviour
 
     // D E R I V E D  A B I L I I T Y  B O I L E R  P L A T E
     //
-    //// Start is called before the first frame update
+    // Start is called before the first frame update
     //void Start()
     //{
+    //    // general timer setup
     //    active = false;
-    //    activeTimer = 0.2f;
+    //    activeTime = 0.2f;
+    //    timeSinceActivation = activeTime;
     //    coolDown = 0.7f;
     //    lastUseTimeStamp = 0f;
+    //    // specific to this ability
     //}
     //
     //// Update is called once per frame
@@ -33,8 +37,8 @@ public class Ability : MonoBehaviour
     //{
     //    if (active)
     //    {
-    //        activeTimer -= Time.deltaTime;
-    //        if (activeTimer <= 0)
+    //        timeSinceActivation -= Time.deltaTime;
+    //        if (timeSinceActivation <= 0)
     //        {
     //            Deactivate();
     //        }
@@ -47,7 +51,7 @@ public class Ability : MonoBehaviour
     //    {
     //        // ability timer stuff
     //        active = true;
-    //        activeTimer = 0.2f;
+    //        timeSinceActivation = activeTime;
     //        lastUseTimeStamp = Time.time;
     //
     //        // ability effects
