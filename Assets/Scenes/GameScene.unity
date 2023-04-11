@@ -338,8 +338,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868c29581b598874f91cf854c383d830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.07
-  moveSpeed: 20
+  delay: 0.7
+  moveSpeed: 8
 --- !u!1001 &570672399
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -421,53 +421,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 152a8a086ff065f4f934029d88300b48, type: 3}
---- !u!1 &703045051
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 703045052}
-  - component: {fileID: 703045053}
-  m_Layer: 0
-  m_Name: Vanish
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &703045052
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 703045051}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1458870816}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &703045053
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 703045051}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdc63772fe1a64f4eb908c9673e0dabd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  invisibilityMat: {fileID: 0}
-  defaultMat: {fileID: 0}
-  visibilityFadeSpeed: 0
 --- !u!1 &806385395
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,8 +518,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 868c29581b598874f91cf854c383d830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.03
-  moveSpeed: 30
+  delay: 0.3
+  moveSpeed: 10
 --- !u!1 &821836661
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,7 +925,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!50 &1458870812
 Rigidbody2D:
   serializedVersion: 4
@@ -1050,7 +1003,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1208938672}
-  - {fileID: 703045052}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

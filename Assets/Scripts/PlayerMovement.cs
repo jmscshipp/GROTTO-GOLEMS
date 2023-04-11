@@ -11,10 +11,10 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 9.95f; // default speed of enem, because char is set to 10 when spawned in in roles script
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         inputVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        GetComponent<Rigidbody2D>().AddForce(inputVector * Time.deltaTime * speed * 300.0f);
+        GetComponent<Rigidbody2D>().AddForce(inputVector * Time.fixedDeltaTime * speed * 300.0f);
     }
 
     //public void OnMove(InputAction.CallbackContext context)

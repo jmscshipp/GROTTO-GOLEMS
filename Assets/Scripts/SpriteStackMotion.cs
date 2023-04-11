@@ -11,14 +11,13 @@ public class SpriteStackMotion : MonoBehaviour
     public float moveSpeed;
 
     private Vector3 targetPos;
-    private Vector3 pendingTargetPos;
     private Vector3 lastPos;
 
-    private IEnumerator SetTargetPosition(Vector3 pos)
+    private void Start()
     {
-        pendingTargetPos = pos;
-        yield return new WaitForSeconds(delay);
-        targetPos = pendingTargetPos;
+        // setting to start pos
+        targetPos = transform.position;
+        lastPos = targetPos;
     }
 
     private void LateUpdate()
@@ -27,15 +26,20 @@ public class SpriteStackMotion : MonoBehaviour
         //transform.position = lastPos;
 
         // move towards the target pos
-        transform.position = Vector2.Lerp(lastPos, targetPos, moveSpeed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(lastPos, targetPos, moveSpeed * Time.deltaTime);
 
         // store new current pos for next frame
         lastPos = transform.position;
 
         // if the parent has a new pos, set it as the new target pos
-        if (transform.parent.localPosition != targetPos && transform.parent.localPosition != pendingTargetPos)
+        if (transform.parent.localPosition != targetPos)
         {
-            StartCoroutine(SetTargetPosition(transform.parent.localPosition));
+            SetTargetPosition(transform.parent.localPosition);
         }
+    }
+
+    private void SetTargetPosition(Vector3 pos)
+    {
+        targetPos = pos;
     }
 }
