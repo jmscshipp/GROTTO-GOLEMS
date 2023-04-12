@@ -16,6 +16,8 @@ TagManager:
   - SawArms
   - RevealerSprite
   - White
+  - Chaser
+  - Hider
   layers:
   - Default
   - TransparentFX

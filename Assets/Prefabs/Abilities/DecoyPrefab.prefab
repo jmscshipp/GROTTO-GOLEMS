@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 7389051374009344149}
   - component: {fileID: 6549520920647623258}
   m_Layer: 8
-  m_Name: DecoyObject
+  m_Name: DecoyPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
