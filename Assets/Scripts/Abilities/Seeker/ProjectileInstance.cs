@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ProjectileInstance : MonoBehaviour
 {
-    public float lifeTime = 3.0f;
+    public float lifeTime = 1.0f;
     private Vector2 moveDir;
     private float lifeTimer;
     private float shrinkTimer;
@@ -39,8 +39,9 @@ public class ProjectileInstance : MonoBehaviour
     {
         if (collision.gameObject.tag != "Character")
         {
-            moveDir = collision.GetContact(0).point - (Vector2)transform.position;
-            moveDir = -moveDir.normalized;
+            Destroy(gameObject);
+            //moveDir = collision.GetContact(0).point - (Vector2)transform.position;
+            //moveDir = -moveDir.normalized;
         }
     }
 }

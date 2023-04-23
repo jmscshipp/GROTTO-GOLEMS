@@ -38,11 +38,11 @@ public class DecoyInstance : MonoBehaviour
             GetComponent<Rigidbody2D>().AddForce(dir * Time.deltaTime * moveSpeed * 300);
     }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject != collisionExemption)
-    //        death = true;
-    //}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject != collisionExemption)
+            death = true;
+    }
 
     public void SetDirectionAndExemption(Vector2 newDirection, GameObject exemption)
     {
