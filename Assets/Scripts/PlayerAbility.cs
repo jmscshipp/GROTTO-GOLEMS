@@ -16,18 +16,17 @@ public class PlayerAbility : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-            currentAbility.Activate();
+    {  
     }
 
-    //public void OnAction(InputAction.CallbackContext secondContext)
-    //{
-    //    Debug.Log("onMenu = " + onMenu);
-    //    if (onMenu == false)
-    //    {
-    //        Debug.Log("use ability");
-    //        currentAbility.Use();
-    //    }
-    //}
+    public void OnAction(InputAction.CallbackContext secondContext)
+    {
+        //Debug.Log("onMenu = " + onMenu);
+        //if (onMenu == false)
+        //{
+        //    Debug.Log("use ability");
+        //    currentAbility.Use();
+        //}
+        currentAbility.Activate();
+    }
 }
