@@ -220,7 +220,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""keyboard"",
+                    ""name"": ""KeyboardWasd"",
                     ""id"": ""b253076a-8085-4122-ba56-1805b57aec25"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
@@ -236,7 +236,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""KeyboardWasd"",
                     ""action"": ""UIMove"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -247,13 +247,46 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""path"": ""<Keyboard>/s"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""KeyboardWasd"",
                     ""action"": ""UIMove"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": ""controller"",
+                    ""name"": ""KeyboardArrows"",
+                    ""id"": ""8a3784cb-7be7-42bf-a109-a3a05dc62244"",
+                    ""path"": ""2DVector"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UIMove"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""up"",
+                    ""id"": ""8dd1429a-91eb-4c44-91cf-e3ac6b5e6bf0"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardArrows"",
+                    ""action"": ""UIMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""down"",
+                    ""id"": ""2115ffa2-22b6-48ef-985b-336b1d025bf3"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardArrows"",
+                    ""action"": ""UIMove"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Controller"",
                     ""id"": ""e0671cee-d0ee-4628-a25e-b81196d5844f"",
                     ""path"": ""2DVector"",
                     ""interactions"": """",
@@ -269,7 +302,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick/up"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Controller"",
                     ""action"": ""UIMove"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -280,7 +313,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""path"": ""<Gamepad>/leftStick/down"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Controller"",
                     ""action"": ""UIMove"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -288,10 +321,10 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""251be6b5-7a7a-43bd-b051-f945715fbdd0"",
-                    ""path"": ""<Keyboard>/j"",
+                    ""path"": ""<Keyboard>/f"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""KeyboardWasd"",
                     ""action"": ""UISelect"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -299,10 +332,21 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""d33bbbd0-701a-4c6f-b920-5c716cafe9a8"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": ""Press"",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": ""Controller"",
+                    ""action"": ""UISelect"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""caa206e0-b5f7-4bf5-86e7-df078fcfb910"",
+                    ""path"": ""<Keyboard>/rightShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""KeyboardArrows"",
                     ""action"": ""UISelect"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false

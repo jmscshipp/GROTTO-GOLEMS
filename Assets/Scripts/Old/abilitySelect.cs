@@ -6,7 +6,7 @@ public class abilitySelect : MonoBehaviour
 {
     // this script should be on the button that is for each ability!
     [HideInInspector]
-    public abilityManager player;
+    public PlayerAbility player;
     public GameObject abilityPrefab;
     // Start is called before the first frame update
     public void AbilitySelect()

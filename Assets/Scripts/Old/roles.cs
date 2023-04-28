@@ -41,7 +41,7 @@ public class roles : MonoBehaviour
             sawAbilitiesParent = UISelection.Find("SawAbilities").gameObject;
             // references for ability select buttons in UI
             foreach (GameObject button in GameObject.FindGameObjectsWithTag("P1UI"))
-                button.GetComponent<abilitySelect>().player = gameObject.GetComponent<abilityManager>();
+                //button.GetComponent<abilitySelect>().player = gameObject.GetComponent<abilityManager>();
             sawAbilitiesParent.SetActive(false);
             // setting active interactable UI to char abilities
             thisEventSystem.playerRoot = charAbilitiesParent;
@@ -59,7 +59,7 @@ public class roles : MonoBehaviour
             sawAbilitiesParent = UISelection.Find("SawAbilities").gameObject;
             // references for ability select buttons in UI
             foreach (GameObject button in GameObject.FindGameObjectsWithTag("P2UI"))
-                button.GetComponent<abilitySelect>().player = gameObject.GetComponent<abilityManager>();
+                //button.GetComponent<abilitySelect>().player = gameObject.GetComponent<abilityManager>();
             charAbilitiesParent.SetActive(false);
             // setting interactable UI to saw abilities
             thisEventSystem.playerRoot = sawAbilitiesParent;

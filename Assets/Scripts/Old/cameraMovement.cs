@@ -43,7 +43,7 @@ public class cameraMovement : MonoBehaviour
 
     public void ResetRoom(bool forMove) // called in Move and also when saw kills character, no room change
     {
-        levels[currentLevel].GetComponent<levelMarker>().thisRoom.StartCoroutine("ResetRoom", forMove);
+        //levels[currentLevel].GetComponent<levelMarker>().thisRoom.StartCoroutine("ResetRoom", forMove);
         eventManager.BeforeLevel();
         if (!forMove)
             mapUI.Swap();

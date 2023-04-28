@@ -6,19 +6,30 @@ public class Room : MonoBehaviour
 {
     public Transform leftSpawnPos, rightSpawnPos;
     public Room leftRoom, rightRoom;
+    private Vector3 center;
     //private GameObject playerLeft, playerRight;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        // calculate room's center for camera
+        Vector3 avg = Vector3.zero;
+        Transform[] children = transform.GetComponentsInChildren<Transform>();
+        foreach (Transform child in children)
+            avg += child.position;
+        center = avg / children.Length;
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public Vector3 GetCenter()
+    {
+        return center;
     }
 
     public Room GetRightRoom()
@@ -31,26 +42,32 @@ public class Room : MonoBehaviour
         return leftRoom;
     }
 
-    public void ResetRoom()
+    public void SetupRoom()
     {
-        // reset player positions
+        // set player positions
+        Debug.Log("placing hider");
         GameObject hider = GameObject.FindGameObjectWithTag("Hider");
-        PlacePlayer(hider, hider.GetComponent<PlayerRoleController>().GetGoalDirection());
-
+        if (hider != null)
+            PlacePlayer(hider, hider.GetComponent<PlayerRoleController>().GetGoalDirection());
+        Debug.Log("placing seeker");
         GameObject seeker = GameObject.FindGameObjectWithTag("Seeker");
-        PlacePlayer(seeker, seeker.GetComponent<PlayerRoleController>().GetGoalDirection());
+        if (seeker != null)
+            PlacePlayer(seeker, seeker.GetComponent<PlayerRoleController>().GetGoalDirection());
     }
 
     private void PlacePlayer(GameObject player, PlayerRoleController.Direction goalDir)
     {
         if (goalDir == PlayerRoleController.Direction.Left)
         {
+            Debug.Log("right");
+
             player.transform.position = rightSpawnPos.position;
         }
         else
         {
-            player.transform.position = leftSpawnPos.position;
+            Debug.Log("left");
 
+            player.transform.position = leftSpawnPos.position;
         }
     }
 }
