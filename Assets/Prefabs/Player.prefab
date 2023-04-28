@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 2829231485751232966}
   - component: {fileID: 2829231485751232970}
   - component: {fileID: 1210871603174300214}
+  - component: {fileID: 4883336669910021101}
   - component: {fileID: 3123368697432299811}
   - component: {fileID: 2829231485751232971}
   - component: {fileID: 2829231485751232968}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Saw
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,6 +80,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   seekerGraphics: {fileID: 5644613121953510962, guid: bb611d21159e21b4bb9b2debd3b7a727, type: 3}
   hiderGraphics: {fileID: 1246372151219526053, guid: d8129f5f5a3c3014d90525252e6b4b6d, type: 3}
+--- !u!114 &4883336669910021101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2829231485751232964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5aa23a890784f042a71a1401e757f53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3123368697432299811
 MonoBehaviour:
   m_ObjectHideFlags: 0

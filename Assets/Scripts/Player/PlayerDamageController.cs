@@ -21,12 +21,23 @@ public class PlayerDamageController : MonoBehaviour
         // this object is seeker
         if (collision.gameObject.tag == "Hider")
         {
-
+            StartCoroutine(SeekerDamaged());
         }
-        // this object is hider
+        // this object is hider, both called when players collide
         else if (collision.gameObject.tag == "Seeker")
         {
-
+            StartCoroutine(HiderDamaged());
         }
+    }
+
+    private IEnumerator HiderDamaged()
+    {
+        GameManager.Instance().SwitchRoles();
+        yield return new WaitForSeconds(0);
+    }
+
+    private IEnumerator SeekerDamaged()
+    {
+        yield return new WaitForSeconds(0);
     }
 }

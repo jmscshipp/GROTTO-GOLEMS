@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class levelMarker : MonoBehaviour
 {
-    public room thisRoom;
+    public Room thisRoom;
 }

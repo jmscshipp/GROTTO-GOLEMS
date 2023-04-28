@@ -24,11 +24,13 @@ public class PlayerRoleController : MonoBehaviour
         {
             SetToHider();
             goalDirection = Direction.Right;
+            gameObject.tag = "Hider";
         }
         else
         {
             SetToSeeker();
             goalDirection = Direction.Left;
+            gameObject.tag = "Seeker";
         }
     }
 
@@ -50,14 +52,14 @@ public class PlayerRoleController : MonoBehaviour
     {
         currentRole = Role.Hider;
         Destroy(currentGraphics);
-        currentGraphics = Instantiate(hiderGraphics, Vector2.zero, Quaternion.identity, transform);
+        currentGraphics = Instantiate(hiderGraphics, transform);
     }
 
     public void SetToSeeker()
     {
         currentRole = Role.Seeker;
         Destroy(currentGraphics);
-        currentGraphics = Instantiate(seekerGraphics, Vector2.zero, Quaternion.identity, transform);
+        currentGraphics = Instantiate(seekerGraphics, transform);
 
     }
 

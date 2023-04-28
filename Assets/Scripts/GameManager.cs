@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private Room currentRoom;
+    public Room currentRoom;
 
     // singleton
     private static GameManager instance;
     
-    public GameManager Instance()
+    public static GameManager Instance()
     {
         return instance;
     }
@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        instance = this;
     }
 
     // Update is called once per frame
@@ -29,5 +29,22 @@ public class GameManager : MonoBehaviour
     public void BeginRoom()
     {
 
+    }
+
+    public void NextRoom(PlayerRoleController.Direction dir)
+    {
+
+    }
+
+    public void SwitchRoles()
+    {
+        Debug.Log("swith roles being called'");
+        GameObject hider = GameObject.FindGameObjectWithTag("Hider");
+        GameObject seeker = GameObject.FindGameObjectWithTag("Seeker");
+
+        hider.GetComponent<PlayerRoleController>().SwitchRole();
+        seeker.GetComponent<PlayerRoleController>().SwitchRole();
+
+        currentRoom.ResetRoom();
     }
 }
