@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -99,16 +100,27 @@ public class GameManager : MonoBehaviour
 
 
         // one of the players made it to the end!
-        if (currentRoom == null)
+        if (currentRoom.GetLeftRoom() == null)
         {
-
+            camMovement.Move(currentRoom.GetCenter());
+            StartCoroutine(EndGame());
         }
         else // go to next room
         {
 
             camMovement.Move(currentRoom.GetCenter());
-
+            if (dir == PlayerRoleController.Direction.Left)
+                GameObject.Find("map").GetComponent<map>().Move(true);
+            else
+                GameObject.Find("map").GetComponent<map>().Move(false);
         }
+    }
+
+    IEnumerator EndGame()
+    {
+        camMovement.ArrivedAtGoal.RemoveListener(ReactivateSelectionUI);
+        yield return new WaitForSeconds(5.0f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     // called when seeker wins a room
@@ -121,14 +133,8 @@ public class GameManager : MonoBehaviour
         hiderf.GetComponent<PlayerMovement>().canMove = false;
         seekerf.GetComponent<PlayerMovement>().canMove = false;
 
-        hiderf.GetComponent<PlayerAbility>().ReActiveSelectionUI();
-        seekerf.GetComponent<PlayerAbility>().ReActiveSelectionUI();
 
-        hiderf.GetComponent<PlayerRoleController>().SetToUIMode();
-        seekerf.GetComponent<PlayerRoleController>().SetToUIMode();
-
-
-        Debug.Log("swith roles being called'");
+        //Debug.Log("swith roles being called'");
         GameObject hider = GameObject.FindGameObjectWithTag("Hider");
         GameObject seeker = GameObject.FindGameObjectWithTag("Seeker");
 
@@ -140,5 +146,13 @@ public class GameManager : MonoBehaviour
         {
             ui.SwapOptions();
         }
+
+
+        hiderf.GetComponent<PlayerAbility>().ReActiveSelectionUI();
+        seekerf.GetComponent<PlayerAbility>().ReActiveSelectionUI();
+
+        hiderf.GetComponent<PlayerRoleController>().SetToUIMode();
+        seekerf.GetComponent<PlayerRoleController>().SetToUIMode();
+
     }
 }

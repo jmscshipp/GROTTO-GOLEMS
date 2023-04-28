@@ -8,6 +8,8 @@ public class AbilityUI : MonoBehaviour
     public GameObject firstSelectedOption2;
     public GameObject playerRootOption1;
     public GameObject playerRootOption2;
+    public GameObject characterGraphics1;
+    public GameObject characterGraphics2;
     private MultiplayerEventSystem uiSystem;
 
     private enum Options { One, Two };
@@ -19,6 +21,7 @@ public class AbilityUI : MonoBehaviour
         uiSystem = GetComponent<MultiplayerEventSystem>();
         uiSystem.firstSelectedGameObject = firstSelectedOption1;
         uiSystem.playerRoot = playerRootOption1;
+        characterGraphics2.SetActive(false);
         currentOption = Options.One;
         playerRootOption2.SetActive(false);
     }
@@ -39,6 +42,9 @@ public class AbilityUI : MonoBehaviour
             playerRootOption2.SetActive(true);
             uiSystem.firstSelectedGameObject = firstSelectedOption2;
             uiSystem.playerRoot = playerRootOption2;
+            characterGraphics1.SetActive(false);
+            characterGraphics2.SetActive(true);
+            uiSystem.SetSelectedGameObject(uiSystem.firstSelectedGameObject);
             currentOption = Options.Two;
         }
         else if (currentOption == Options.Two)
@@ -47,6 +53,9 @@ public class AbilityUI : MonoBehaviour
             playerRootOption2.SetActive(false);
             uiSystem.firstSelectedGameObject = firstSelectedOption1;
             uiSystem.playerRoot = playerRootOption1;
+            characterGraphics1.SetActive(true);
+            characterGraphics2.SetActive(false);
+            uiSystem.SetSelectedGameObject(uiSystem.firstSelectedGameObject);
             currentOption = Options.One;
         }
     }

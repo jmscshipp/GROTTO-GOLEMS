@@ -22,18 +22,22 @@ public class PlayerDamageController : MonoBehaviour
         if (collision.gameObject.tag == "Hider")
         {
             StartCoroutine(SeekerDamaged());
+            GetComponent<CircleCollider2D>().enabled = false;
         }
         // this object is hider, both called when players collide
         else if (collision.gameObject.tag == "Seeker")
         {
+
             StartCoroutine(HiderDamaged());
+            GetComponent<CircleCollider2D>().enabled = false;
         }
     }
 
     private IEnumerator HiderDamaged()
     {
+        Debug.Log("hider collided wtih seeekr");
+        yield return new WaitForSeconds(0.1f);
         GameManager.Instance().SwitchRoles();
-        yield return new WaitForSeconds(0);
     }
 
     private IEnumerator SeekerDamaged()

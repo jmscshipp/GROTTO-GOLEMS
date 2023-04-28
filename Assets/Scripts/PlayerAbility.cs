@@ -24,10 +24,21 @@ public class PlayerAbility : MonoBehaviour
         selectionUI.SetActive(true);
     }
 
+    public void DisableUI()
+    {
+        selectionUI.SetActive(false);
+
+    }
+
     public void SetAbility(GameObject abilityPrefab)
     {
-        GameObject abilityObj = Instantiate(abilityPrefab, transform);
-        currentAbility = abilityObj.GetComponent<Ability>();
+        if (abilityPrefab != null)
+        {
+            GameObject abilityObj = Instantiate(abilityPrefab, transform);
+            currentAbility = abilityObj.GetComponent<Ability>();
+        }
+
+        
         selectionUI.SetActive(false);
         GameManager.Instance().ReadUP();
     }
@@ -40,6 +51,10 @@ public class PlayerAbility : MonoBehaviour
         //    Debug.Log("use ability");
         //    currentAbility.Use();
         //}
-        currentAbility.Activate();
+        if (currentAbility != null)
+        {
+            currentAbility.Activate();
+            //Debug.Log("activating ability!");
+        }
     }
 }

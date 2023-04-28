@@ -19,10 +19,10 @@ public class abilityManager : MonoBehaviour
     }
     public void OnAction(InputAction.CallbackContext secondContext)
     {
-        Debug.Log("onMenu = " + onMenu);
+        //Debug.Log("onMenu = " + onMenu);
         if (onMenu == false)
         {
-            Debug.Log("use ability");
+            //Debug.Log("use ability");
             currentAbility.Use();
         }
     }

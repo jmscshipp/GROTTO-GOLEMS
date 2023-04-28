@@ -45,11 +45,11 @@ public class Room : MonoBehaviour
     public void SetupRoom()
     {
         // set player positions
-        Debug.Log("placing hider");
+        //Debug.Log("placing hider");
         GameObject hider = GameObject.FindGameObjectWithTag("Hider");
         if (hider != null)
             PlacePlayer(hider, hider.GetComponent<PlayerRoleController>().GetGoalDirection());
-        Debug.Log("placing seeker");
+        //Debug.Log("placing seeker");
         GameObject seeker = GameObject.FindGameObjectWithTag("Seeker");
         if (seeker != null)
             PlacePlayer(seeker, seeker.GetComponent<PlayerRoleController>().GetGoalDirection());
@@ -59,13 +59,13 @@ public class Room : MonoBehaviour
     {
         if (goalDir == PlayerRoleController.Direction.Left)
         {
-            Debug.Log("right");
+            //Debug.Log("right");
 
             player.transform.position = rightSpawnPos.position;
         }
         else
         {
-            Debug.Log("left");
+            //Debug.Log("left");
 
             player.transform.position = leftSpawnPos.position;
         }

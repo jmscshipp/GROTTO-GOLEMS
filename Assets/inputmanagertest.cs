@@ -19,6 +19,6 @@ public class inputmanagertest : MonoBehaviour
 
     public void OnPlayerJoin(PlayerInput playerInput)
     {
-        Debug.Log("current control scheme: " + playerInput.currentControlScheme);
+        //Debug.Log("current control scheme: " + playerInput.currentControlScheme);
     }
 }
