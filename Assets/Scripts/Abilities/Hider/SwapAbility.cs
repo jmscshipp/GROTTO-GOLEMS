@@ -46,7 +46,7 @@ public class SwapAbility : Ability
             // ability effects
             transform.parent.GetComponent<CircleCollider2D>().enabled = false;
             tempPosition = transform.parent.position;
-            GameObject chaser = GameObject.FindGameObjectWithTag("Chaser");
+            GameObject chaser = GameObject.FindGameObjectWithTag("Seeker");
             transform.parent.position = chaser.transform.position;
             chaser.transform.position = tempPosition;
             transform.parent.GetComponent<CircleCollider2D>().enabled = true;

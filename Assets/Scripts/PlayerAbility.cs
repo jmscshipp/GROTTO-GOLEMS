@@ -32,6 +32,8 @@ public class PlayerAbility : MonoBehaviour
 
     public void SetAbility(GameObject abilityPrefab)
     {
+        if (currentAbility != null)
+            Destroy(currentAbility.gameObject);
         if (abilityPrefab != null)
         {
             GameObject abilityObj = Instantiate(abilityPrefab, transform);

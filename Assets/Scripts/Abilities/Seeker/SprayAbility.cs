@@ -10,7 +10,7 @@ public class SprayAbility : Ability
     x   p   x
      x  x  x
     */
-    private Vector2[] spawnLocations = { new Vector2(0, 1), new Vector2(0.7071f, 0.7071f), new Vector2(1, 0), new Vector2(0.7071f, -0.7071f), new Vector2(0, -1), new Vector2(-0.7071f, -0.7071f), new Vector2(-1, 0), new Vector2(-0.7071f, 0.7071f) };
+    private Vector2[] spawnLocations = { new Vector2(0, 2f), new Vector2(1.5f, 1.5f), new Vector2(2f, 0), new Vector2(1.5f, -1.5f), new Vector2(0, -2f), new Vector2(-1.5f, -1.5f), new Vector2(-2f, 0), new Vector2(-1.5f, 1.5f) };
     public GameObject projectilePrefab;
 
     // Start is called before the first frame update
